@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title></title>
+<script src="/zoo/statics/js/jquery-1.11.3.min.js" type="text/javascript"
+    charset="utf-8"></script>
+<script src="/zoo/statics/js/common.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="..." alt="...">
+            <div class="caption">
+                <h3>Thumbnail label</h3>
+                <h11 style="float:right">Thumbnail label</h11>
+                <p>...</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+var lastTime =0;
+var curPage =0;
+var PATH="/zoo"
+function loadTV(){alert(AJAX_SUCC)
+    if(new Date().getTime()-lastTime >500){
+    lastTime=new Date().getTime();
+    curPage++;
+
+    $.getJSON(PATH+"/videoNew/list.json",{curPage:curPage,pageSize:10},function(result){
+        if(result.r==AJAX_SUCC){
+            for(var i=0;i<result.data.length;i++)
+            {var data=result.data[i];
+                $(".row").append(
+                '<div class=\"col-sm-6 col-md-4\">'+
+                    '<div class="thumbnail">'+
+                        '<a href="'+data.url+'" target="blank"><img src="'+data.img+'" alt="'+data.vname+'"></a>'+
+                        '<div class="caption">'+
+                            '<h3>'+data.vname+'</h3>'+
+                            '<p>'+data.viewnum+'</p>'+
+                            '<p><a href="#" class="btn btn-primary" role="button">鏀惰棌</a> <a href="#" class="btn btn-default" role="button">瑙傜湅</a></p>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'
+
+                );
+            }
+        }
+    });
+     }
+}
+
+    var scrollDom =document.body;//document.getElementsByClassName("page")[0];
+        var scrollDom1 =document.getElementsByClassName("page")[0];
+scrollDom.onscroll=function(){
+
+var h =document.body.clientHeight;  //椤甸潰楂樺害
+var c = ScollPostion().top; //婊氬姩鏉op
+ var wh = $(window).height(); //椤甸潰鍙槸鍖哄煙楂樺害
+ var s = h - (c + wh);
+ console.log(s/h);
+ if (  s/h==0 ) {
+    loadTV(); // 璇曡瘯
+ }
+};
+$(document).ready(function(){
+	    loadTV();
+});
+function  ScollPostion() {//婊氬姩鏉′綅缃�
+            var t, l, w, h;
+            if (document.documentElement && document.documentElement.scrollTop) {
+                t = document.documentElement.scrollTop;
+                l = document.documentElement.scrollLeft;
+                w = document.documentElement.scrollWidth;
+                h = document.documentElement.scrollHeight;
+            } else if (document.body) {
+                t = document.body.scrollTop;
+                l = document.body.scrollLeft;
+                w = document.body.scrollWidth;
+                h = document.body.scrollHeight;
+            }
+            return { top: t, left: l, width: w, height: h };
+        }
+    
+
+</script>
