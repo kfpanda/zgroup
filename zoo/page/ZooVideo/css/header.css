@@ -1,0 +1,60 @@
+header {
+	position: relative;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 2px solid #DFDFDF;
+	margin: 0 40px;
+}
+
+header .title {
+	width: 100px;
+	height: inherit;
+	line-height: inherit;
+	border-bottom: 2px solid #F07D00;
+}
+
+header label {
+	display: inline-block;
+	padding-left: 1rem;
+	vertical-align: bottom;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 800;
+	font-size: 20px;
+}
+
+header span {
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	left: 55px;
+	top: 18px;
+	color: #F07D00;
+	font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+	header {
+		margin: 0 3px;
+	}
+	header span {
+		top: 10px;
+	}
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+	header {
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+	header {
+		height: 40px;
+		line-height: 40px;
+	}
+	header span {
+		top: 1px;
+	}
+}
