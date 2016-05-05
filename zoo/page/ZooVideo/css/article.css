@@ -19,7 +19,7 @@ article .row .v_block {
 }
 
 
-/*这个样式添加就可以达到一种神奇的境界了*/
+/*杩欎釜鏍峰紡娣诲姞灏卞彲浠ヨ揪鍒颁竴绉嶇濂囩殑澧冪晫浜�/
 
 
 /*article .row .v_block :after {   
@@ -32,7 +32,7 @@ article .row .v_block {
 
 
 /**
- * 视频截图
+ * 瑙嗛鎴浘
  */
 
 .v_block img {
@@ -53,8 +53,7 @@ article .row .v_block {
 
 
 /**
- * 信息板
- */
+ * 淇℃伅鏉� */
 
 .v_block .msg {
 	font-size: 1.3rem;
@@ -87,8 +86,7 @@ article .row .v_block {
 
 
 /**
- * 标题和点赞
- */
+ * 鏍囬鍜岀偣璧� */
 
 .v_block .msg .title {
 	font-weight: 600;
@@ -105,7 +103,7 @@ article .row .v_block {
 
 
 /**
- * 主播和观众数
+ * 涓绘挱鍜岃浼楁暟
  */
 
 .v_block .top span {
@@ -381,7 +379,7 @@ article .row .v_block {
 		font-size: 1rem;
 	}
 	.v_block .msg .like {
-		padding: 0 5px 0 0;
+		padding: 0 2px ;
 	}
 	.v_block .msg .top,
 	.v_block .msg .bottom {
