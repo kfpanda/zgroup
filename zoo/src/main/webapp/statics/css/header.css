@@ -1,71 +1,60 @@
-/**
- * header
- * @authors Ping YF (koakumaping@163.com)
- * @date    2015-10-27 14:14:26
- * @version $Id$
- */
-
-.header {
+header {
+	position: relative;
 	height: 60px;
 	line-height: 60px;
-	color: #ffffff;
-  /*box-shadow: 0 2px 0 #2372CC, 0 1px 0 #438EE4;*/
-    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 10;
+	border-bottom: 2px solid #DFDFDF;
+	margin: 0 40px;
 }
 
-@media screen and (min-width: 1024px) {
-    .header {
-        width: 740px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+header .title {
+	width: 100px;
+	height: inherit;
+	line-height: inherit;
+	border-bottom: 2px solid #F07D00;
 }
 
-.header-left,
-.header-right {
-	/*background: url(../img/header/back.png) no-repeat 15px center;*/
-	/*background-size: 20%;*/
-	/*color: transparent;*/
-	/*padding: 30px 0;*/
-	height: 60px;
-	line-height: 60px;
-	color: #ffffff;
+header label {
+	display: inline-block;
+	padding-left: 1rem;
+	vertical-align: bottom;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 800;
+	font-size: 20px;
 }
 
-.header-left-img {
-	display: block;
-    position: relative;
-    top: 30%;
-    left: 10%;
-    height: 40%;
+header span {
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	left: 55px;
+	top: 18px;
+	color: #F07D00;
+	font-weight: 600;
 }
 
-.header-left-span {
-    position: relative;
-    top: -24px;
-    color: #ffffff;
-    padding-left: 42px;
-}
-
-@media screen and (min-width:700px){
-	.header-left-span {
-	    padding-left: 0;
+@media only screen and (max-width: 768px) {
+	header {
+		margin: 0 3px;
+	}
+	header span {
+		top: 10px;
 	}
 }
 
-.header-right-img {
-    display: block;
-    position: relative;
-    top: 30%;
-    height: 40%;
-    right: 15px;
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+	header {
+		height: 50px;
+		line-height: 50px;
+	}
 }
 
-.header-right-span {
-	margin-right: 15px;
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+	header {
+		height: 40px;
+		line-height: 40px;
+	}
+	header span {
+		top: 1px;
+	}
 }
