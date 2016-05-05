@@ -10,9 +10,10 @@
       <result column="type" jdbcType="VARCHAR" property="type" />
       <result column="img" jdbcType="VARCHAR" property="img" />
       <result column="vkey" jdbcType="VARCHAR" property="vkey" />
+      <result column="vfrom" jdbcType="VARCHAR" property="vfrom" />
   </resultMap>
   <sql id="Base_Column_List">
-    `id` ,`vname` ,`zbname` ,`viewnum` ,`url` ,`type` ,`img` ,`vkey` 
+    `id` ,`vname` ,`zbname` ,`viewnum` ,`url` ,`type` ,`img` ,`vkey` ,`vfrom`
    
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -229,6 +230,10 @@ where id = #{id,jdbcType=BIGINT}
         <if test="vkeyLike != null and vkeyLike != '' ">  
              and `vkey` like "%"#{vkeyLike}"%"
         </if>   
+        <if test="vfrom != null and vfrom != '' ">  
+              and `vfrom` = #{vfrom}
+        </if>   
+        
   </select>
    <select id="countByParams" parameterType="map" resultType="java.lang.Integer">
     select 

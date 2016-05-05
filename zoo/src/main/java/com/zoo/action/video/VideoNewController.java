@@ -127,7 +127,10 @@ public class VideoNewController extends BaseAction {
         if(!StringUtils.isBlank(vkeyLike)){
             params.put("vkeyLike",vkeyLike);
         }
-
+        String vfrom = request.getParameter("vfrom");
+        if(!StringUtils.isBlank(vfrom)){
+            params.put("vfrom",vfrom);
+        }
         params.put("page",page);
         List<VideoNew> videoNews = videoNewService.listByParams4Page(params);
         return ResultUtil.getResult(videoNews, page);
