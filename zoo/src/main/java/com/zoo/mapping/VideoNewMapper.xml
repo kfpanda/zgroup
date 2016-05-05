@@ -233,7 +233,7 @@ where id = #{id,jdbcType=BIGINT}
         <if test="vfrom != null and vfrom != '' ">  
               and `vfrom` = #{vfrom}
         </if>   
-        
+        order by viewnum desc
   </select>
    <select id="countByParams" parameterType="map" resultType="java.lang.Integer">
     select 
