@@ -33,7 +33,7 @@
 		var curPage = 0;
 		var PATH = "/zoo"
 		function loadTV() {
-			alert(AJAX_SUCC)
+			console.log(AJAX_SUCC)
 			if (new Date().getTime() - lastTime > 500) {
 				lastTime = new Date().getTime();
 				curPage++;
@@ -49,7 +49,7 @@
 										for (var i = 0; i < result.data.length; i++) {
 											var data = result.data[i];
 											$(".row").append(
-													'<div class="v_block"><div class="img"><a href='+ data.url+'><img src='+data.img+' ></a></div>' 
+													'<div class="v_block"><input type="hidden" value='+data.id+'><a target="blank" href='+ data.url+' ><div class="img"><img src='+data.img+' ></div></a>' 
 													+ '<div class="msg"><div class="left"><div class="top">' 
 													+ '<span class="hoster">'+data.zbname+'</span></div>' 
 													+ '<div class="bottom"><a href="javascript:void(0);" class="title">'+data.vname+'</a></div></div>' 
@@ -62,7 +62,7 @@
 			}
 		}
 
-		var scrollDom = document.body;//document.getElementsByClassName("page")[0];
+		/* var scrollDom = document.body;//document.getElementsByClassName("page")[0];
 		var scrollDom1 = document.getElementsByClassName("page")[0];
 		scrollDom.onscroll = function() {
 
@@ -75,6 +75,24 @@
 				loadTV(); // 璇曡瘯
 			}
 		};
+		 */
+	    $(window).scroll(function () {
+	        //$(window).scrollTop()这个方法是当前滚动条滚动的距离
+	        //$(window).height()获取当前窗体的高度
+	        //$(document).height()获取当前文档的高度
+	        var bot = 50; 
+	        //bot是底部距离的高度
+	        if ((bot + $(window).scrollTop()) >=
+	        ($(document).height() - $(window).height())) {
+	            //当底部基本距离+滚动的高度〉=文档的高度-窗体的高度时；
+	            loadTV();
+	        } 
+	        
+	       /*  if($(window).scrollTop()<=0){
+	        	curpage=0;
+	        	loadTV();
+	        } */
+	    });  
 		$(document).ready(function() {
 			loadTV();
 		});
