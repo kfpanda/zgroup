@@ -100,7 +100,10 @@ article .row .v_block {
 	border-radius: 3px;
 	padding: 0 20px;
 }
-
+.v_block .msg .vfrom{
+	color: #F07D00;
+	padding: 0 1px
+}
 
 /**
  * 涓绘挱鍜岃浼楁暟
@@ -235,7 +238,7 @@ article .row .v_block {
 		border: 1px solid #F07D00;
 		border-radius: 1%;
 		border-radius: 3px;
-		padding: 0 5px 0 0;
+		padding: 0 5px;
 	}
 	.v_block .msg .hoster {
 		max-width: 120px;
