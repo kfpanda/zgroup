@@ -29,6 +29,16 @@
 		charset="utf-8"></script>
 
 	<script type="text/javascript">
+	function audienceFilter(num){
+		if(num>10000){
+			num= Math.ceil(num/100);
+			num=(num/100).toFixed(2);
+			return num+'万';
+		}else{
+			return num ;
+		}
+	}
+	
 		var lastTime = 0;
 		var curPage = 0;
 		var PATH = "/zoo"
@@ -53,7 +63,7 @@
 													+ '<div class="msg"><div class="left"><div class="top">' 
 													+ '<span class="hoster">'+data.zbname+'</span></div>' 
 													+ '<div class="bottom"><a href="javascript:void(0);" class="title">'+data.vname+'</a></div></div>' 
-													+ '<div class="right"><div class="top"><span class="audience"> '+data.viewnum+'</span></div>' 
+													+ '<div class="right"><div class="top"><span class="audience"> '+audienceFilter(data.viewnum)+'</span></div>' 
 													+ '<div class="bottom"><a href="javascript:void(0);" class="vfrom"> '+ data.vfrom+'</a></div></div></div></div>'
 													);
 										}
