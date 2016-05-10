@@ -14,6 +14,155 @@
   <sql id="Base_Column_List" >
     id, vname, zbname, viewnum, url, type, img, vkey
   </sql>
+  
+   <select id="listByParams" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from video_hot where 1=1
+        <if test="id != null and id != '' ">  
+           and `id` = #{id}
+        </if>  
+        <if test="vname != null and vname != '' ">  
+           and `vname` = #{vname}
+        </if>  
+        <if test="vnameLike != null and vnameLike != '' ">  
+             and `vname` like "%"#{vnameLike}"%"
+        </if>   
+        <if test="zbname != null and zbname != '' ">  
+           and `zbname` = #{zbname}
+        </if>  
+        <if test="zbnameLike != null and zbnameLike != '' ">  
+             and `zbname` like "%"#{zbnameLike}"%"
+        </if>   
+        <if test="viewnum != null and viewnum != '' ">  
+           and `viewnum` = #{viewnum}
+        </if>  
+        <if test="url != null and url != '' ">  
+           and `url` = #{url}
+        </if>  
+        <if test="urlLike != null and urlLike != '' ">  
+             and `url` like "%"#{urlLike}"%"
+        </if>   
+        <if test="type != null and type != '' ">  
+           and `type` = #{type}
+        </if>  
+        <if test="typeLike != null and typeLike != '' ">  
+             and `type` like "%"#{typeLike}"%"
+        </if>   
+        <if test="img != null and img != '' ">  
+           and `img` = #{img}
+        </if>  
+        <if test="imgLike != null and imgLike != '' ">  
+             and `img` like "%"#{imgLike}"%"
+        </if>   
+        <if test="vkey != null and vkey != '' ">  
+           and `vkey` = #{vkey}
+        </if>  
+        <if test="vkeyLike != null and vkeyLike != '' ">  
+             and `vkey` like "%"#{vkeyLike}"%"
+        </if>   
+  </select>
+  
+  <select id="countByParams" parameterType="map" resultType="java.lang.Integer">
+    select 
+    count(1) 
+    from video_hot where 1=1
+        <if test="id != null and id != '' ">  
+           and `id` = #{id}
+        </if>  
+        <if test="vname != null and vname != '' ">  
+           and `vname` = #{vname}
+        </if>  
+        <if test="vnameLike != null and vnameLike != '' ">  
+             and `vname` like "%"#{vnameLike}"%"
+        </if>   
+        <if test="zbname != null and zbname != '' ">  
+           and `zbname` = #{zbname}
+        </if>  
+        <if test="zbnameLike != null and zbnameLike != '' ">  
+             and `zbname` like "%"#{zbnameLike}"%"
+        </if>   
+        <if test="viewnum != null and viewnum != '' ">  
+           and `viewnum` = #{viewnum}
+        </if>  
+        <if test="url != null and url != '' ">  
+           and `url` = #{url}
+        </if>  
+        <if test="urlLike != null and urlLike != '' ">  
+             and `url` like "%"#{urlLike}"%"
+        </if>   
+        <if test="type != null and type != '' ">  
+           and `type` = #{type}
+        </if>  
+        <if test="typeLike != null and typeLike != '' ">  
+             and `type` like "%"#{typeLike}"%"
+        </if>   
+        <if test="img != null and img != '' ">  
+           and `img` = #{img}
+        </if>  
+        <if test="imgLike != null and imgLike != '' ">  
+             and `img` like "%"#{imgLike}"%"
+        </if>   
+        <if test="vkey != null and vkey != '' ">  
+           and `vkey` = #{vkey}
+        </if>  
+        <if test="vkeyLike != null and vkeyLike != '' ">  
+             and `vkey` like "%"#{vkeyLike}"%"
+        </if>   
+  </select>
+  
+   <select id="listByParams4Page" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from video_hot where 1=1
+        <if test="id != null and id != '' ">  
+           and `id` = #{id}
+        </if>  
+        <if test="vname != null and vname != '' ">  
+           and `vname` = #{vname}
+        </if>  
+        <if test="vnameLike != null and vnameLike != '' ">  
+             and `vname` like "%"#{vnameLike}"%"
+        </if>   
+        <if test="zbname != null and zbname != '' ">  
+           and `zbname` = #{zbname}
+        </if>  
+        <if test="zbnameLike != null and zbnameLike != '' ">  
+             and `zbname` like "%"#{zbnameLike}"%"
+        </if>   
+        <if test="viewnum != null and viewnum != '' ">  
+           and `viewnum` = #{viewnum}
+        </if>  
+        <if test="url != null and url != '' ">  
+           and `url` = #{url}
+        </if>  
+        <if test="urlLike != null and urlLike != '' ">  
+             and `url` like "%"#{urlLike}"%"
+        </if>   
+        <if test="type != null and type != '' ">  
+           and `type` = #{type}
+        </if>  
+        <if test="typeLike != null and typeLike != '' ">  
+             and `type` like "%"#{typeLike}"%"
+        </if>   
+        <if test="img != null and img != '' ">  
+           and `img` = #{img}
+        </if>  
+        <if test="imgLike != null and imgLike != '' ">  
+             and `img` like "%"#{imgLike}"%"
+        </if>   
+        <if test="vkey != null and vkey != '' ">  
+           and `vkey` = #{vkey}
+        </if>  
+        <if test="vkeyLike != null and vkeyLike != '' ">  
+             and `vkey` like "%"#{vkeyLike}"%"
+        </if>   
+        <if test="vfrom != null and vfrom != '' ">  
+              and `vfrom` = #{vfrom}
+        </if>   
+        order by viewnum desc
+  </select>
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
