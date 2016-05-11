@@ -10,9 +10,10 @@
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="img" property="img" jdbcType="VARCHAR" />
     <result column="vkey" property="vkey" jdbcType="VARCHAR" />
+    <result column="vfrom" jdbcType="VARCHAR" property="vfrom" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, vname, zbname, viewnum, url, type, img, vkey
+    `id`, `vname`, `zbname`, `viewnum`,`url`, `type`, `img`, `vkey`,`vfrom`
   </sql>
   
    <select id="listByParams" parameterType="map" resultMap="BaseResultMap">

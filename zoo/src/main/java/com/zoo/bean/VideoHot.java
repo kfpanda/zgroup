@@ -2,22 +2,24 @@ package com.zoo.bean;
 
 public class VideoHot {
     private Long id;
-
     private String vname;
-
     private String zbname;
-
     private Integer viewnum;
-
     private String url;
-
     private String type;
-
     private String img;
-
     private String vkey;
+    private String  vfrom;
+    
+    public String getVfrom() {
+		return vfrom;
+	}
 
-    public Long getId() {
+	public void setVfrom(String vfrom) {
+		this.vfrom = vfrom;
+	}
+
+	public Long getId() {
         return id;
     }
 
