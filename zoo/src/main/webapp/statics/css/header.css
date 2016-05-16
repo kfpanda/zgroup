@@ -1,5 +1,5 @@
 header {
-	position: relative;
+	#position: relative;
 	height: 60px;
 	line-height: 60px;
 	border-bottom: 2px solid #DFDFDF;
@@ -7,11 +7,23 @@ header {
 }
 
 header .title {
+	height: inherit;
+	line-height: inherit;
+	#border-bottom: 2px solid #F07D00;
+}
+
+header .title .tag{
+	display:inline-block;
 	width: 100px;
 	height: inherit;
 	line-height: inherit;
+	position:relative;
+}
+
+header .title .active{
 	border-bottom: 2px solid #F07D00;
 }
+
 
 header label {
 	display: inline-block;
@@ -28,7 +40,7 @@ header span {
 	line-height: 40px;
 	position: absolute;
 	left: 55px;
-	top: 18px;
+	top: 20px;
 	color: #F07D00;
 	font-weight: 600;
 }
