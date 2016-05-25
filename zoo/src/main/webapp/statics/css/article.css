@@ -1,6 +1,10 @@
+
+
 article {
 	width: 100%;
 	min-width: 320px;
+	margin-bottom:50px;
+	overflow: hidden;
 }
 
 article .contain {
@@ -357,6 +361,16 @@ article .row .v_block {
 	.v_block .msg .hoster {
 		max-width: 125px;
 	}
+		.v_block .msg .left {
+	width: 65%;
+	float: left;
+}
+
+.v_block .msg .right {
+	width: 35%;
+	float: left;
+	text-align: right;
+}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 359px) {

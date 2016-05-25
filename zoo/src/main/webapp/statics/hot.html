@@ -22,12 +22,20 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
+	<div class="logo">
+		<img src="img/logo.png" />
+	</div>
 	<header>
 		<div class="title">
 		<a href="hot.html"><div class="tag active" ><label>最热</label> <span>HOT</span></div></a>
 		<a href="star.html"><div class="tag " ><label>网红</label> <span>STAR</span></div></a>	
-			
+		<div class="qrcode" >
+		<div>微信公众号</div>
+		<img src="img/qrcode.jpg"/> 
 		</div>
+		
+		</div>
+		
 	</header>
 
 	<article>
@@ -35,6 +43,10 @@ var _hmt = _hmt || [];
 			<div class="row"></div>
 		</div>
 	</article>
+	
+	<footer>
+	 浙ICP备16018035号
+	</footer>
 	<script src="/zoo/statics/js/jquery-1.11.3.min.js"
 		type="text/javascript" charset="utf-8"></script>
 	<script src="/zoo/statics/js/common.js" type="text/javascript"
@@ -54,18 +66,22 @@ var _hmt = _hmt || [];
 		var lastTime = 0;
 		var curPage = 0;
 		var PATH = "/zoo"
+		var PATH = ""
 		function loadTV() {
 			console.log(AJAX_SUCC)
 			if (new Date().getTime() - lastTime > 500) {
 				lastTime = new Date().getTime();
 				curPage++;
+				/* if (curPage>1){
+					document.getElementsByTagName('footer')[0].style.display='none';
+				} */
 
 				$
 						.getJSON(
 								PATH + "/videoNew/list.json",
 								{
 									curPage : curPage,
-									pageSize : 20
+									pageSize : 12
 								},
 								function(result) {
 									if (result.r == AJAX_SUCC) {
@@ -125,10 +141,10 @@ var _hmt = _hmt || [];
 								loadTV();
 							}
 
-							if ($(window).scrollTop() <= 0) {
+						/* 	if ($(window).scrollTop() <= 0) {
 								curpage = 0;
 								window.location.reload();
-							}
+							} */
 						});
 		$(document).ready(function() {
 			loadTV();
