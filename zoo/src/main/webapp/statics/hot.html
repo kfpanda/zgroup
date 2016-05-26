@@ -24,20 +24,20 @@ var _hmt = _hmt || [];
 </head>
 
 <body>
-	<div class="logo">
-		<img src="img/logo.png" />
-	</div>
+
 	<header>
 		<div class="title">
+		<div  class="logo"><img src="img/logo.png" /></div>
+		<div class=""> 
 		<a href="hot.html"><div class="tag active" ><label>最热</label> <span>HOT</span></div></a>
-		<a href="star.html"><div class="tag " ><label>网红</label> <span>STAR</span></div></a>	
+		<a href="star.html"><div class="tag " ><label>网红</label> <span>STAR</span></div></a>
+		</div>
+	
 		<div class="qrcode" >
 		<div>微信公众号</div>
 		<img src="img/qrcode.jpg"/> 
 		</div>
-		
 		</div>
-		
 	</header>
 
 	<article>
@@ -68,7 +68,7 @@ var _hmt = _hmt || [];
 		var lastTime = 0;
 		var curPage = 0;
 		var PATH = "/zoo"
-		var PATH = ""
+		//var PATH = ""
 		function loadTV() {
 			console.log(AJAX_SUCC)
 			if (new Date().getTime() - lastTime > 500) {
